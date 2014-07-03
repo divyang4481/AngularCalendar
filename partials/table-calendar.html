@@ -1,0 +1,29 @@
+    <div class="content-wrap">
+      <div class="calendar-container"> 
+        <div class="current-date"> 
+          <a href="javascript:void(0)">{{month_value}}</a>
+          <a href="javascript:void(0)">{{year_value}}</a>
+        </div> 
+        <div class="buttons-container"> 
+          <button id="prevYear" ng-click="prevYear()">&#171;</button>
+          <button id="prevMonth" ng-click="prevMonth()">&#60;</button>
+          <button id="today" ng-click="goToDay()">ToDay</button>
+          <button id="nextMonth" ng-click="nextMonth()">&#62;</button>
+          <button id="nextYear" ng-click="nextYear()">&#187;</button>
+        </div>
+        <table>
+      	 <thead>
+      	   <tr>
+      		  <th>Mon</th><th>Thu</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th>
+      	   </tr>
+      	 </thead>
+      	 <tbody>
+            <tr ng-repeat="week in weeks">
+                <td ng-repeat="day in week">
+                  <a ng-class="day.isSelected ? day.isToday ? 'today' : 'selected' : day.isToday ? 'today' : ''" ng-click="goToAnotherDay(day)" href="javascipt:void(0)">{{day.title}}</a>
+                </td>
+            </tr>
+      	 </tbody>
+        </table>
+      </div>
+    </div>
